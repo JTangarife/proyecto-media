@@ -63,9 +63,9 @@
         
         <table border="1">
             <tr>
-                <th>nombre</th>
-                <th>precio</th>
-                <th>descripcion</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descripcion</th>
             </tr>
             <%
             Producto p;
