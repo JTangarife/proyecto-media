@@ -13,7 +13,11 @@
         <style>
             h1{
                 color: blue;
-            }  
+               
+            }
+            body{
+                background-color: gray;
+            }
             
         </style>
     </head>

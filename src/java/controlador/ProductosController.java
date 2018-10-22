@@ -60,7 +60,7 @@ public class ProductosController extends HttpServlet {
     private void guardarProducto(String nombre, int precio, String descripcion, int tipoproducto) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/productos", "root", "");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
             PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`productos` (`nombre`, `precio`, descripcion, tipoproducto) VALUES (?, ?, ?, ?)");
             ps.setString(1, nombre);
             ps.setInt(2, precio);
@@ -111,6 +111,8 @@ public class ProductosController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        
     }
 
     /**

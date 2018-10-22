@@ -22,6 +22,17 @@
         </style>
     </head>
     <body>
+       
+        <li><a href="inicio.jsp">Inicio</a></li>    
+        <li><a href="contactenos.jsp">Contáctenos</a></li>       
+        <li><a href="deudas.jsp">Deudas</a></li>    
+        <li><a href="usuarios.jsp">Usuarios</a></li>    
+        <li><a href="inventario.jsp">Inventario</a></li>    
+        <li><a href="publicidad.jsp">Publicidad</a></li>    
+        
+        
+
+        
         <%@page import="java.util.List" %>
         <%@page import="modelos.Producto" %>
         <%

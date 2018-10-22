@@ -57,8 +57,8 @@ public class ContactenosController extends HttpServlet {
     private void guardarDesarrollador (String nombre, String telefono, String direccion){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/contactenos","root", "");
-            PreparedStatement ps = conexion.prepareStatement("SELECT * FROM desarrolladores");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda","root", "");
+            PreparedStatement ps = conexion.prepareStatement("SELECT * FROM contactenos");
             ps.setString(1, nombre);
             ps.setString(2, telefono);
             ps.setString(3, direccion);
@@ -73,8 +73,8 @@ public class ContactenosController extends HttpServlet {
         List<Contactenos> ListaDesa = new ArrayList<Contactenos>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/contactenos","root", "");
-            PreparedStatement ps = conexion.prepareStatement("SELECT * FROM desarrolladores");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda","root", "");
+            PreparedStatement ps = conexion.prepareStatement("SELECT * FROM contactenos");
             ResultSet resultado = ps.executeQuery();
             Contactenos c;
             while(resultado.next()){

@@ -10,6 +10,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inventario</title>
+        <style>
+            h1{
+                color: blue;
+               
+            }
+            body{
+                background-color: gray;
+            }
+            
+        </style>        
     </head>
     <body>
         <h1>Inventario de productos que ingresan a la página</h1>

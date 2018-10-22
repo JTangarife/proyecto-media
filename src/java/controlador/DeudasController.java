@@ -58,15 +58,15 @@ public class DeudasController extends HttpServlet {
     private void guardarDeudas(String idusuario, int valor_deudas) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/saldar", "root", "");
-            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `saldar`.`deudas` (`idusuario`, `valordeuda`, ) VALUES (?, ?, ?)");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`, ) VALUES (?, ?)");
             ps.setString(1, idusuario);
             ps.setInt(2, valor_deudas);
             ps.execute();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -74,7 +74,7 @@ public class DeudasController extends HttpServlet {
         List<Deudas> listaDeu = new ArrayList<Deudas>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/saldar","root", "");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda","root", "");
             PreparedStatement ps = conexion.prepareStatement("SELECT * FROM deudas");
             ResultSet resultado = ps.executeQuery();
             Deudas d;
@@ -85,9 +85,9 @@ public class DeudasController extends HttpServlet {
                 listaDeu.add(d);
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaDeu;
     }

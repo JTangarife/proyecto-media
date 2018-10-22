@@ -10,6 +10,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Contáctenos</title>
+        <style>
+            h1{
+                color: blue;
+               
+            }
+            body{
+                background-color: gray;
+            }
+            
+        </style>        
     </head>
     <body>
         <%@page import="java.util.List" %>
