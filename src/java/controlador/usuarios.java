@@ -38,7 +38,7 @@ public class usuarios extends HttpServlet {
             out.println("<title>Servlet usuarios</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet usuarios at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Usuarios de la tienda</h1>");
             out.println("</body>");
             out.println("</html>");
         }

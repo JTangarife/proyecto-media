@@ -58,7 +58,7 @@ public class ContactenosController extends HttpServlet {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda","root", "");
-            PreparedStatement ps = conexion.prepareStatement("SELECT * FROM contactenos");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`productos` (`nombre`, `telefono`, `direccion`) VALUES (?,?,?)");
             ps.setString(1, nombre);
             ps.setString(2, telefono);
             ps.setString(3, direccion);

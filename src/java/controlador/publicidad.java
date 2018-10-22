@@ -38,7 +38,7 @@ public class publicidad extends HttpServlet {
             out.println("<title>Servlet publicidad</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet publicidad at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Publicidad de la tienda</h1>");
             out.println("</body>");
             out.println("</html>");
         }

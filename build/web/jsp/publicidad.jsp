@@ -23,11 +23,11 @@
     </head>
     <body>
         <h1>Publicidad referente a la página</h1>
-        <li><a href="inicio.jsp">Inicio</a></li>    
-        <li><a href="contactenos.jsp">Contáctenos</a></li>       
-        <li><a href="deudas.jsp">Deudas</a></li>    
-        <li><a href="usuarios.jsp">Usuarios</a></li>    
-        <li><a href="inventario.jsp">Inventario</a></li>    
-        <li><a href="Productos.jsp">Productos</a></li>
+        <li><a href="inicio">Inicio</a></li>    
+        <li><a href="contactenos">Contáctenos</a></li>       
+        <li><a href="deudas">Deudas</a></li>    
+        <li><a href="usuarios">Usuarios</a></li>    
+        <li><a href="inventario">Inventario</a></li>    
+        <li><a href="Productos">Productos</a></li>
     </body>
 </html>

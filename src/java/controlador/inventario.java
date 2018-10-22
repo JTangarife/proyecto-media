@@ -38,7 +38,7 @@ public class inventario extends HttpServlet {
             out.println("<title>Servlet inventario</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet inventario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Inventario de la tienda</h1>");
             out.println("</body>");
             out.println("</html>");
         }

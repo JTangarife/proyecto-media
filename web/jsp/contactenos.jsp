@@ -9,31 +9,37 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Contáctenos</title>
-        <style>
+        <title>Contáctenos</title>        <style>
             h1{
                 color: blue;
                
             }
             body{
-                background-color: gray;
+                background-color:  #f2f2f2;
+            }
+            a{
+                color: blue;
             }
             
-        </style>        
+        </style>
     </head>
     <body>
-        <li><a href="inicio.jsp">Inicio</a></li>    
-        <li><a href="productos.jsp">Productos</a></li>       
-        <li><a href="deudas.jsp">Deudas</a></li>    
-        <li><a href="usuarios.jsp">Usuarios</a></li>    
-        <li><a href="inventario.jsp">Inventario</a></li>    
-        <li><a href="publicidad.jsp">Publicidad</a></li>
+       
+        <li><a href="inicio">Inicio</a></li>    
+        <li><a href="productos">Productos</a></li>       
+        <li><a href="deudas">Deudas</a></li>    
+        <li><a href="usuarios">Usuarios</a></li>    
+        <li><a href="inventario">Inventario</a></li>    
+        <li><a href="publicidad">Publicidad</a></li>
+        
         <%@page import="java.util.List" %>
         <%@page import="modelos.Contactenos" %>
+        
         <%
         List<Contactenos> listaContactenos = (List<Contactenos>) request.getAttribute("ListaDesa");
         %>
         <h1>Contáctenos</h1>
+        
         <form name="contactenos" action="contactenos" method="POST">
             <span>Nombre</span><input type="text" name="nombre"/>
             <span>Teléfono</span><input type="text" name="telefono"/>
@@ -41,7 +47,7 @@
                 
             <button type="submit">guardar información</button>
         </form>
-        <table>
+        <table border="1">
             <tr>
                 <th>Nombre</th>
                 <th>Teléfono</th>

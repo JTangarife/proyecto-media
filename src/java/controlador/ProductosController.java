@@ -61,7 +61,7 @@ public class ProductosController extends HttpServlet {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
-            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`productos` (`nombre`, `precio`, descripcion, tipoproducto) VALUES (?, ?, ?, ?)");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`productos` (`nombre`, `precio`, `descripcion`, `tipoproducto`) VALUES (?, ?, ?, ?)");
             ps.setString(1, nombre);
             ps.setInt(2, precio);
             ps.setString(3, descripcion);
