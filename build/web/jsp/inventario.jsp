@@ -22,6 +22,22 @@
         </style>        
     </head>
     <body>
+        
+        <li><a href="inicio.jsp">Inicio</a></li>    
+        <li><a href="contactenos.jsp">Contáctenos</a></li>       
+        <li><a href="deudas.jsp">Deudas</a></li>    
+        <li><a href="usuarios.jsp">Usuarios</a></li>    
+        <li><a href="productos.jsp">Productos</a></li>    
+        <li><a href="publicidad.jsp">Publicidad</a></li>
+        
         <h1>Inventario de productos que ingresan a la página</h1>
+            <form name="productos" action="productos" method="POST">
+                <span>Producto</span><input type="text" name="nombre" />
+                <span>Precio</span><input type="number" name="precio" />
+                <span>Cantidad<span/><input type="number" name="cantidad"/>
+                <span>Descripción</span><input type="text" name="descripcion" />
+
+                <button type="submit">Enviar</button>
+                    </form>        
     </body>
 </html>

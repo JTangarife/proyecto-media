@@ -23,5 +23,12 @@
     </head>
     <body>
         <h1>Usuarios que hacen parte de la tienda escolar</h1>
+        
+        <li><a href="inicio.jsp">Inicio</a></li>    
+        <li><a href="contactenos.jsp">Contáctenos</a></li>       
+        <li><a href="deudas.jsp">Deudas</a></li>    
+        <li><a href="productos.jsp">Productos</a></li>    
+        <li><a href="inventario.jsp">Inventario</a></li>    
+        <li><a href="publicidad.jsp">Publicidad</a></li>
     </body>
 </html>

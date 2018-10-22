@@ -16,7 +16,10 @@
                
             }
             body{
-                background-color: gray;
+                background-color:  #f2f2f2;
+            }
+            a{
+                color: blue;
             }
             
         </style>
@@ -39,10 +42,12 @@
         List<Producto> listaProductos = (List<Producto>)request.getAttribute("listaProd");
         %>
         <h1>Ingreso de productos a la tienda</h1>
+        <br>
         <form name="productos" action="productos" method="POST">
             <span>Nombre</span><input type="text" name="nombre" />
             <span>Precio</span><input type="number" name="precio" />
             <span>Descripción</span><input type="text" name="descripcion" />
+            
             <select name="tipoproducto">
                 <option value="1">Fritos</option>              
                 <option value="2">Mecato</option>
@@ -53,6 +58,8 @@
             
             <button type="submit">Guardar productos</button>
         </form>
+        
+        <br>
         
         <table border="1">
             <tr>

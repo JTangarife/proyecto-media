@@ -22,6 +22,14 @@
         </style>        
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>La tienda del colegio bien mela</h1>
+        
+        <li><a href="productos.jsp">Inicio</a></li>    
+        <li><a href="contactenos.jsp">Contáctenos</a></li>       
+        <li><a href="deudas.jsp">Deudas</a></li>    
+        <li><a href="usuarios.jsp">Usuarios</a></li>    
+        <li><a href="inventario.jsp">Inventario</a></li>    
+        <li><a href="publicidad.jsp">Publicidad</a></li>
+        
     </body>
 </html>
