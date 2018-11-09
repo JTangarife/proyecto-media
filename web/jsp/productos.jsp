@@ -25,13 +25,13 @@
         </style>
     </head>
     <body>
-       
-        <li><a href="inicio">Inicio</a></li>    
-        <li><a href="contactenos">Contáctenos</a></li>       
-        <li><a href="deudas">Deudas</a></li>    
-        <li><a href="usuarios">Usuarios</a></li>    
-        <li><a href="inventario">Inventario</a></li>    
-        <li><a href="publicidad">Publicidad</a></li>    
+        <ul>
+            <li><a href="inicio">Inicio</a></li>    
+            <li><a href="contactenos">Contáctenos</a></li>       
+            <li><a href="deudas">Deudas</a></li>    
+            <li><a href="usuarios">Usuarios</a></li>    
+        </ul>
+            
         
         
 

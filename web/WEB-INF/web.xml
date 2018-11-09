@@ -5,10 +5,6 @@
         <servlet-class>controlador.ProductosController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>deudas</servlet-name>
-        <servlet-class>controlador.DeudasController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>contactenos</servlet-name>
         <servlet-class>controlador.ContactenosController</servlet-class>
     </servlet>
@@ -27,10 +23,6 @@
     <servlet-mapping>
         <servlet-name>productos</servlet-name>
         <url-pattern>/productos</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>deudas</servlet-name>
-        <url-pattern>/deudas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>contactenos</servlet-name>

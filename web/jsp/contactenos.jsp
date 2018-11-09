@@ -25,12 +25,12 @@
     </head>
     <body>
        
-        <li><a href="inicio">Inicio</a></li>    
-        <li><a href="productos">Productos</a></li>       
-        <li><a href="deudas">Deudas</a></li>    
-        <li><a href="usuarios">Usuarios</a></li>    
-        <li><a href="inventario">Inventario</a></li>    
-        <li><a href="publicidad">Publicidad</a></li>
+        <ul>
+            <li><a href="productos">Inicio</a></li>    
+            <li><a href="productos">Productos</a></li>       
+            <li><a href="deudas">Deudas</a></li>    
+            <li><a href="usuarios">Usuarios</a></li>  
+        </ul>
         
         <%@page import="java.util.List" %>
         <%@page import="modelos.Contactenos" %>

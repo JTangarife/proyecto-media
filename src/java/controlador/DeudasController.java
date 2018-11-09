@@ -31,37 +31,13 @@ import modelos.Deudas;
 @WebServlet(name = "deudas", urlPatterns = {"/deudas"})
 public class DeudasController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP
-     * <code>GET</code> and
-     * <code>POST</code> methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("jsp/deudas.jsp");
-        request.setAttribute("listaDeu", consultarDatos());
-        
-        String idusuario = request.getParameter("idusuario");
-        
-        if(idusuario != null && !idusuario.equals("")) {
-            int valor_deudas = Integer.parseInt(request.getParameter("valor_deudas"));
-            guardarDeudas(idusuario, valor_deudas);
-        }
-        
-        rd.forward(request, response);
-    }
-    private void guardarDeudas(String idusuario, int valor_deudas) {
+    private void guardarDeudas(String idusuario, int deuda) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
-            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`, ) VALUES (?, ?)");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/saldar", "root", "");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `saldar`.`deudas` (`idusuario`, `valor_deudas`) VALUES (?, ?)");
             ps.setString(1, idusuario);
-            ps.setInt(2, valor_deudas);
+            ps.setInt(2, deuda);
             ps.execute();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,19 +45,36 @@ public class DeudasController extends HttpServlet {
             Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    List<Deudas> consultarDatos (){
+
+    private void actualizarDeuda(int id, String idusuario, int deuda) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/saldar", "root", "");
+            PreparedStatement ps = conexion.prepareStatement("UPDATE `saldar`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?");
+            ps.setString(1, idusuario);
+            ps.setInt(2, deuda);
+            ps.execute();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
+        }//UPDATE `saldar`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?;//UPDATE `saldar`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?;
+
+    }
+
+    List<Deudas> consultarDatos() {
         List<Deudas> listaDeu = new ArrayList<Deudas>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda","root", "");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/saldar", "root", "");
             PreparedStatement ps = conexion.prepareStatement("SELECT * FROM deudas");
             ResultSet resultado = ps.executeQuery();
             Deudas d;
-            while(resultado.next()) {
+            while (resultado.next()) {
                 String idusuario = resultado.getString("idusuario");
-                String  valor_deudas = resultado.getString("valor_deudas");
-                d = new Deudas(idusuario, valor_deudas);
+                String valor_deudas = resultado.getString("valor_deudas");
+                String id = resultado.getString("id");
+                d = new Deudas(idusuario, valor_deudas, id);
                 listaDeu.add(d);
             }
         } catch (ClassNotFoundException ex) {
@@ -105,7 +98,12 @@ public class DeudasController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        RequestDispatcher rd = request.getRequestDispatcher("jsp/deudas.jsp");
+
+        request.setAttribute("listaDeu", consultarDatos());
+
+        rd.forward(request, response);
     }
 
     /**
@@ -120,7 +118,25 @@ public class DeudasController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        RequestDispatcher rd = request.getRequestDispatcher("jsp/deudas.jsp");
+
+        String idstr = request.getParameter("id");
+        String idusuario = request.getParameter("idusuario");
+        String valor_deudas = request.getParameter("valor_deudas");
+
+        int deuda = Integer.parseInt(valor_deudas);
+
+        if (idstr != null && !idstr.equals("")) {
+            int id = Integer.parseInt(idstr);
+            actualizarDeuda(id, idusuario, deuda);
+        } else {
+            guardarDeudas(idusuario, deuda);
+        }
+        request.setAttribute("listaDeu", consultarDatos());
+
+        rd.forward(request, response);
+
     }
 
     /**

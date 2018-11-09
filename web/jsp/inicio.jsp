@@ -24,12 +24,13 @@
     <body>
         <h1>La tienda del colegio bien mela</h1>
         
-        <li><a href="productos">Inicio</a></li>    
-        <li><a href="contactenos">Contáctenos</a></li>       
-        <li><a href="deudas">Deudas</a></li>    
-        <li><a href="usuarios">Usuarios</a></li>    
-        <li><a href="inventario">Inventario</a></li>    
-        <li><a href="publicidad">Publicidad</a></li>
+        <ul>
+            <li><a href="productos">Inicio</a></li>    
+            <li><a href="contactenos">Contáctenos</a></li>       
+            <li><a href="deudas">Deudas</a></li>    
+            <li><a href="usuarios">Usuarios</a></li>  
+        </ul>
+         
         
     </body>
 </html>
