@@ -32,7 +32,7 @@
         <h1>Cuentas de deudas en la tienda</h1>
         
         <ul>
-            <li><a href="productos">Inicio</a></li>    
+            <li><a href="inicio">Inicio</a></li>    
             <li><a href="contactenos">Contáctenos</a></li>       
             <li><a href="productos">Productos</a></li>    
             <li><a href="usuarios">Usuarios</a></li>  

@@ -26,7 +26,7 @@
     <body>
        
         <ul>
-            <li><a href="productos">Inicio</a></li>    
+            <li><a href="inicio">Inicio</a></li>    
             <li><a href="productos">Productos</a></li>       
             <li><a href="deudas">Deudas</a></li>    
             <li><a href="usuarios">Usuarios</a></li>  

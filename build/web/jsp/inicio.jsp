@@ -25,7 +25,7 @@
         <h1>La tienda del colegio bien mela</h1>
         
         <ul>
-            <li><a href="productos">Inicio</a></li>    
+            <li><a href="productos">Productos</a></li>    
             <li><a href="contactenos">Contáctenos</a></li>       
             <li><a href="deudas">Deudas</a></li>    
             <li><a href="usuarios">Usuarios</a></li>  
