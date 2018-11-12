@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Productos tienda</title>
         <style>
@@ -48,36 +51,36 @@
             <span>Precio</span><input type="number" name="precio" />
             <span>Descripción</span><input type="text" name="descripcion" />
             
-            <select name="tipoproducto">
-                <option value="1">Fritos</option>              
-                <option value="2">Mecato</option>
-                <option value="3">Bebidas</option>
-                <option value="4">Desechables</option>
-                
-            </select>
             
-            <button type="submit">Guardar productos</button>
+            
+                <button type="submit" class="btn btn-dark">Guardar productos</button>
         </form>
         
         <br>
+         
         
-        <table border="1">
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Descripcion</th>
-            </tr>
-            <%
-            Producto p;
-            for(int i = 0; i < listaProductos.size(); i++){
-                p = listaProductos.get(i);%>
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
-                    <td><%= p.nombre%></td>
-                    <td><%= p.precio%></td>
-                    <td><%= p.descripcion%></td>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Descripción</th>
                 </tr>
-            <%
-            }%>
+    
+                <%
+                    Producto p;
+                    for(int i = 0; i < listaProductos.size(); i++){
+                        p = listaProductos.get(i);%>
+                        <tr>
+                            <td><%= p.nombre%></td>
+                            <td><%= p.precio%></td>
+                            <td><%= p.descripcion%></td>
+                        </tr>
+                    <%
+                }%>
+                
+            </thead>
+  
         </table>
     </body>
 </html>

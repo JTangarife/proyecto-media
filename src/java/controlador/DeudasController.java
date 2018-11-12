@@ -34,8 +34,8 @@ public class DeudasController extends HttpServlet {
     private void guardarDeudas(String idusuario, int deuda) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/saldar", "root", "");
-            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `saldar`.`deudas` (`idusuario`, `valor_deudas`) VALUES (?, ?)");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES (?, ?)");
             ps.setString(1, idusuario);
             ps.setInt(2, deuda);
             ps.execute();
@@ -49,8 +49,8 @@ public class DeudasController extends HttpServlet {
     private void actualizarDeuda(int id, String idusuario, int deuda) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/saldar", "root", "");
-            PreparedStatement ps = conexion.prepareStatement("UPDATE `saldar`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
+            PreparedStatement ps = conexion.prepareStatement("UPDATE `tienda`.`deudas` SET `idusuario`=?, `valordeuda`=? WHERE `id`=?");
             ps.setString(1, idusuario);
             ps.setInt(2, deuda);
             ps.execute();
@@ -58,7 +58,7 @@ public class DeudasController extends HttpServlet {
             Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
-        }//UPDATE `saldar`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?;//UPDATE `saldar`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?;
+        }//UPDATE `tienda`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?;//UPDATE `tienda`.`deudas` SET `idusuario`=?, `valor_deudas`=? WHERE `id`=?;
 
     }
 
@@ -66,13 +66,13 @@ public class DeudasController extends HttpServlet {
         List<Deudas> listaDeu = new ArrayList<Deudas>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/saldar", "root", "");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda", "root", "");
             PreparedStatement ps = conexion.prepareStatement("SELECT * FROM deudas");
             ResultSet resultado = ps.executeQuery();
             Deudas d;
             while (resultado.next()) {
                 String idusuario = resultado.getString("idusuario");
-                String valor_deudas = resultado.getString("valor_deudas");
+                String valor_deudas = resultado.getString("valordeuda");
                 String id = resultado.getString("id");
                 d = new Deudas(idusuario, valor_deudas, id);
                 listaDeu.add(d);
@@ -129,7 +129,7 @@ public class DeudasController extends HttpServlet {
 
         if (idstr != null && !idstr.equals("")) {
             int id = Integer.parseInt(idstr);
-            actualizarDeuda(id, idusuario, deuda);
+            actualizarDeuda(id, idusuario, valor_deudas);
         } else {
             guardarDeudas(idusuario, deuda);
         }
@@ -148,4 +148,8 @@ public class DeudasController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private void actualizarDeuda(int id, String idusuario, String valor_deudas) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

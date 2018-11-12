@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Deudas</title>
         <style>
@@ -44,19 +47,19 @@
             <span>valor deudas</span><input type="number" name="valor_deudas" />
             
             
-            <button type="submit">Confirmar deudas</button>
+                <button type="submit" class="btn btn-dark">Confirmar deudas</button>
 
         </form>
         
-       <table border="1">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Idusuario</th>
-                        <th>Valor deuda</th>
-                        <th>Editar</th>
-                    </tr>
-                </thead>
+       <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Idusuario</th>
+                    <th scope="col">Valor deuda</th>
+                    <th scope="col">Editar</th>
+                    
+                </tr>
                 <tbody>
                     <%
                     for(Deudas d : listaDeudas) {%>
