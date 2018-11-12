@@ -45,3 +45,15 @@ ALTER TABLE `tienda`.`productos`
 ADD COLUMN `tipoproducto` VARCHAR(45) NULL COMMENT '' AFTER `descripcion`;
 
 
+
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('1', '2220');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('2', '654');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('3', '654');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('4', '64');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('5', '654');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('6', '654');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('7', '654');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('8', '65');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('9', '988488');
+INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('10', '8');
+
