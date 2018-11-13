@@ -10,14 +10,12 @@ package modelos;
  */
 public class Deudas {
     
-    public String id;
-    public String idusuario;
-    public String valor_deudas;
+    public int idusuario;
+    public int valordeuda;
 
-    public Deudas(String idusuario, String valor_deudas, String id) {
+    public Deudas(int idusuario, int valordeuda) {
         this.idusuario = idusuario;
-        this.valor_deudas = valor_deudas;
-        this.id = id;
+        this.valordeuda = valordeuda;
     }
 }
 

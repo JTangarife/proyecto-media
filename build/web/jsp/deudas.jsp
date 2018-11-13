@@ -15,13 +15,16 @@
         <title>Deudas</title>
         <style>
             h1{
-                color: blue;
+                color:  black;
             }
             
              td>img.edit {
                 width: 30px;
             }
             
+            body{
+                background: #b3c6ff;
+            }
         </style>
         
             
@@ -35,7 +38,7 @@
         <h1>Cuentas de deudas en la tienda</h1>
         
         <ul>
-            <li><a href="inicio">Inicio</a></li>    
+            <li><a href="principal">Inicio</a></li>    
             <li><a href="contactenos">Contáctenos</a></li>       
             <li><a href="productos">Productos</a></li>    
             <li><a href="usuarios">Usuarios</a></li>  

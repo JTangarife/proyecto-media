@@ -15,11 +15,15 @@
         <title>Usuarios</title>
         <style>
             h1{
-                color: blue;
+                color:  black;
                
             }
             body{
-                background-color: gray;
+                background-color: #b3c6ff;
+            }
+            
+            a{
+                color: black;
             }
             
         </style>        
@@ -27,7 +31,7 @@
     <body>
         <h1>Usuarios que hacen parte de la tienda escolar</h1>
         <ul>
-                <li><a href="inicio">Inicio</a></li>    
+                <li><a href="principal">Inicio</a></li>    
                 <li><a href="contactenos">Contáctenos</a></li>       
                 <li><a href="deudas">Deudas</a></li>    
                 <li><a href="productos">Productos</a></li> 

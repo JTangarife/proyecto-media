@@ -51,13 +51,12 @@ public class ProductosController extends HttpServlet {
         if(nombre != null && !nombre.equals("")) {
             int precio = Integer.parseInt(request.getParameter("precio"));
             String descripcion = request.getParameter("descripcion");
-            int tipocomida = Integer.parseInt(request.getParameter("tipoproducto"));
-            guardarProducto(nombre, precio, descripcion, tipocomida);
+            guardarProducto(nombre, precio, descripcion);
         }
         
         rd.forward(request, response);
     }
-    private void guardarProducto(String nombre, int precio, String descripcion, int tipoproducto) {
+    private void guardarProducto(String nombre, int precio, String descripcion ) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
@@ -65,7 +64,6 @@ public class ProductosController extends HttpServlet {
             ps.setString(1, nombre);
             ps.setInt(2, precio);
             ps.setString(3, descripcion);
-            ps.setInt(4, tipoproducto);
             ps.execute();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ProductosController.class.getName()).log(Level.SEVERE, null, ex);

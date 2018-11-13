@@ -57,7 +57,7 @@ public class ContactenosController extends HttpServlet {
     private void guardarDesarrollador (String nombre, String telefono, String direccion){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda","root", "");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda","root", "");
             PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES (?,?,?)");
             ps.setString(1, nombre);
             ps.setString(2, telefono);
@@ -78,9 +78,9 @@ public class ContactenosController extends HttpServlet {
             ResultSet resultado = ps.executeQuery();
             Contactenos c;
             while(resultado.next()){
-                String nombre = resultado.getString("Nombre");
-                String telefono = resultado.getString("Teléfono");
-                String direccion = resultado.getString("Dirección");
+                String nombre = resultado.getString("nombre");
+                String telefono = resultado.getString("telefono");
+                String direccion = resultado.getString("direccion");
                 c = new Contactenos(nombre, telefono, direccion);
                 ListaDesa.add(c);
             }

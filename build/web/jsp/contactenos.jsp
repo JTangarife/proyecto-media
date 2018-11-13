@@ -14,14 +14,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Contáctenos</title>        <style>
             h1{
-                color: blue;
+                color:  black;
                
             }
             body{
-                background-color:  #f2f2f2;
+                background-color: #b3c6ff;
             }
             a{
-                color: blue;
+                color: black;
             }
             
         </style>
@@ -29,7 +29,7 @@
     <body>
        
         <ul>
-            <li><a href="inicio">Inicio</a></li>    
+            <li><a href="principal">Inicio</a></li>    
             <li><a href="productos">Productos</a></li>       
             <li><a href="deudas">Deudas</a></li>    
             <li><a href="usuarios">Usuarios</a></li>  
@@ -48,7 +48,7 @@
             <span>Teléfono</span><input type="text" name="telefono"/>
             <span>Dirección</span><input type="text" name="direccion"/>
                 
-            <button type="submit">guardar información</button>
+            <button type="submit" class="btn btn-danger">Guardar información</button>
         </form>
         <table class="table">
             <thead class="thead-dark">

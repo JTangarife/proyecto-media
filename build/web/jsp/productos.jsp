@@ -15,21 +15,21 @@
         <title>Productos tienda</title>
         <style>
             h1{
-                color: blue;
+                color:  black;
                
             }
             body{
-                background-color:  #f2f2f2;
+                background-color: #b3c6ff;
             }
             a{
-                color: blue;
+                color: black;
             }
             
         </style>
     </head>
     <body>
         <ul>
-            <li><a href="inicio">Inicio</a></li>    
+            <li><a href="index.html">Inicio</a></li>    
             <li><a href="contactenos">Contáctenos</a></li>       
             <li><a href="deudas">Deudas</a></li>    
             <li><a href="usuarios">Usuarios</a></li>    
@@ -53,7 +53,7 @@
             
             
             
-                <button type="submit" class="btn btn-dark">Guardar productos</button>
+                <button type="submit" class="btn btn-success">Guardar productos</button>
         </form>
         
         <br>

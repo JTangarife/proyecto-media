@@ -31,13 +31,13 @@ import modelos.Deudas;
 @WebServlet(name = "deudas", urlPatterns = {"/deudas"})
 public class DeudasController extends HttpServlet {
 
-    private void guardarDeudas(String idusuario, int deuda) {
+    private void guardarDeudas(int idusuario, int valordeuda) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
             PreparedStatement ps = conexion.prepareStatement("INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES (?, ?)");
-            ps.setString(1, idusuario);
-            ps.setInt(2, deuda);
+            ps.setInt(1, idusuario);
+            ps.setInt(2, valordeuda);
             ps.execute();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
@@ -46,13 +46,13 @@ public class DeudasController extends HttpServlet {
         }
     }
 
-    private void actualizarDeuda(int id, String idusuario, int deuda) {
+    private void actualizarDeuda( int idusuario, int valordeuda) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tienda", "root", "");
             PreparedStatement ps = conexion.prepareStatement("UPDATE `tienda`.`deudas` SET `idusuario`=?, `valordeuda`=? WHERE `id`=?");
-            ps.setString(1, idusuario);
-            ps.setInt(2, deuda);
+            ps.setInt(1, idusuario);
+            ps.setInt(2, valordeuda);
             ps.execute();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DeudasController.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,10 +71,9 @@ public class DeudasController extends HttpServlet {
             ResultSet resultado = ps.executeQuery();
             Deudas d;
             while (resultado.next()) {
-                String idusuario = resultado.getString("idusuario");
-                String valor_deudas = resultado.getString("valordeuda");
-                String id = resultado.getString("id");
-                d = new Deudas(idusuario, valor_deudas, id);
+                int idusuario = resultado.getInt("idusuario");
+                int valordeuda = resultado.getInt("valordeuda");
+                d = new Deudas(idusuario, valordeuda);
                 listaDeu.add(d);
             }
         } catch (ClassNotFoundException ex) {
@@ -149,7 +148,7 @@ public class DeudasController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void actualizarDeuda(int id, String idusuario, String valor_deudas) {
+    private void actualizarDeuda( int idusuario, int valordeuda) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
