@@ -50,25 +50,27 @@
                 
             <button type="submit">guardar información</button>
         </form>
-        <table border="1">
-            <tr>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Dirección</th>
-            </tr>
-            <% 
-                Contactenos c;
-                for(int i = 0; i < listaContactenos.size(); i++){
-                    c = listaContactenos.get(i);%>
-                    <tr>
-                        <td><%= c.nombre%></td>
-                        <td><%= c.telefono%></td>
-                        <td><%= c.direccion%></td>
-                    </tr>
-                    <%
-            }%>
-            
-            
+        <table class="table">
+            <thead class="thead-dark">
+
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                </tr>
+                <% 
+                    Contactenos c;
+                    for(int i = 0; i < listaContactenos.size(); i++){
+                        c = listaContactenos.get(i);%>
+                        <tr>
+                            <td><%= c.nombre%></td>
+                            <td><%= c.telefono%></td>
+                            <td><%= c.direccion%></td>
+                        </tr>
+                        <%
+                }%>
+            </thead>
+
         </table>
     </body>
 </html>

@@ -57,3 +57,11 @@ INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('8', '65');
 INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('9', '988488');
 INSERT INTO `tienda`.`deudas` (`idusuario`, `valordeuda`) VALUES ('10', '8');
 
+
+
+INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES ('David Tangarife', '23432', 'cra 888');
+INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES ('Diego Yepes', '2222', 'calle 781');
+INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES ('Miguel Molina', '010101', 'cra 88 c');
+INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES ('Nicolás Betancur', '23', 'afei');
+INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES ('Óscar Suárez', '425', 'fjkdl n9');
+INSERT INTO `tienda`.`contactenos` (`nombre`, `telefono`, `direccion`) VALUES ('Felipe Diossa', '43', 'fdy8y');
