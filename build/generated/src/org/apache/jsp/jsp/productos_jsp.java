@@ -94,46 +94,46 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <span>Precio</span><input type=\"number\" name=\"precio\" />\r\n");
       out.write("            <span>Descripción</span><input type=\"text\" name=\"descripcion\" />\r\n");
       out.write("            \r\n");
-      out.write("            <select name=\"tipoproducto\">\r\n");
-      out.write("                <option value=\"1\">Fritos</option>              \r\n");
-      out.write("                <option value=\"2\">Mecato</option>\r\n");
-      out.write("                <option value=\"3\">Bebidas</option>\r\n");
-      out.write("                <option value=\"4\">Desechables</option>\r\n");
-      out.write("                \r\n");
-      out.write("            </select>\r\n");
       out.write("            \r\n");
-      out.write("            <button type=\"submit\">Guardar productos</button>\r\n");
+      out.write("            \r\n");
+      out.write("                <button type=\"submit\" class=\"btn btn-dark\">Guardar productos</button>\r\n");
       out.write("        </form>\r\n");
       out.write("        \r\n");
       out.write("        <br>\r\n");
+      out.write("         \r\n");
       out.write("        \r\n");
-      out.write("        <table border=\"1\">\r\n");
-      out.write("            <tr>\r\n");
-      out.write("                <th>Nombre</th>\r\n");
-      out.write("                <th>Precio</th>\r\n");
-      out.write("                <th>Descripcion</th>\r\n");
-      out.write("            </tr>\r\n");
-      out.write("            ");
-
-            Producto p;
-            for(int i = 0; i < listaProductos.size(); i++){
-                p = listaProductos.get(i);
-      out.write("\r\n");
+      out.write("        <table class=\"table\">\r\n");
+      out.write("            <thead class=\"thead-dark\">\r\n");
       out.write("                <tr>\r\n");
-      out.write("                    <td>");
+      out.write("                    <th scope=\"col\">Nombre</th>\r\n");
+      out.write("                    <th scope=\"col\">Precio</th>\r\n");
+      out.write("                    <th scope=\"col\">Descripción</th>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("    \r\n");
+      out.write("                ");
+
+                    Producto p;
+                    for(int i = 0; i < listaProductos.size(); i++){
+                        p = listaProductos.get(i);
+      out.write("\r\n");
+      out.write("                        <tr>\r\n");
+      out.write("                            <td>");
       out.print( p.nombre);
       out.write("</td>\r\n");
-      out.write("                    <td>");
+      out.write("                            <td>");
       out.print( p.precio);
       out.write("</td>\r\n");
-      out.write("                    <td>");
+      out.write("                            <td>");
       out.print( p.descripcion);
       out.write("</td>\r\n");
-      out.write("                </tr>\r\n");
-      out.write("            ");
+      out.write("                        </tr>\r\n");
+      out.write("                    ");
 
-            }
+                }
       out.write("\r\n");
+      out.write("                \r\n");
+      out.write("            </thead>\r\n");
+      out.write("  \r\n");
       out.write("        </table>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
