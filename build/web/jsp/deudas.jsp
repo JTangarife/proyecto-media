@@ -67,10 +67,9 @@
                     <%
                     for(Deudas d : listaDeudas) {%>
                     <tr>
-                        <td><%= d.id%></td>
                         <td><%= d.idusuario%></td>
-                        <td><%= d.valor_deudas%></td>
-                        <td><image class="edit" onclick="editarDeuda(<%= d.id%>, '<%= d.idusuario%>', '<%= d.valor_deudas%>')" src="https://icon-icons.com/icons2/906/PNG/512/pencil_icon-icons.com_69999.png" /></td>
+                        <td><%= d.valordeuda%></td>
+                        <td><image class="edit" onclick="editarDeuda('<%= d.idusuario%>', '<%= d.valordeuda%>')" src="https://icon-icons.com/icons2/906/PNG/512/pencil_icon-icons.com_69999.png" /></td>
                     </tr>
                     <%
                     }%>
@@ -79,13 +78,11 @@
             <script>
                 function editarDeuda(id, idusuario, deuda){
                     //alert(id + " " + nombre + " " + ruta);
-                    var inputId = document.getElementById("id");
                     var inputIdusuario = document.getElementById("idusuario");
-                    var inputValor_deudas = document.getElementById("valor_deudas");
+                    var inputValordeuda = document.getElementById("valor_deudas");
                     
-                    inputId.value = id;
                     inputIdusuario.value = idusuario;
-                    inputValor_deudas.value = valor_deudas;
+                    inputValordeuda.value = valordeuda;
                 }
             </script>
     </body>

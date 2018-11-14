@@ -120,15 +120,14 @@ public class DeudasController extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("jsp/deudas.jsp");
 
-        String idstr = request.getParameter("id");
         String idusuario = request.getParameter("idusuario");
-        String valor_deudas = request.getParameter("valor_deudas");
+        String valor_deudas = request.getParameter("valordeuda");
 
         int deuda = Integer.parseInt(valor_deudas);
 
         if (idstr != null && !idstr.equals("")) {
             int id = Integer.parseInt(idstr);
-            actualizarDeuda(id, idusuario, valor_deudas);
+            actualizarDeuda(idusuario, valordeuda);
         } else {
             guardarDeudas(idusuario, deuda);
         }
@@ -148,7 +147,5 @@ public class DeudasController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void actualizarDeuda( int idusuario, int valordeuda) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }
