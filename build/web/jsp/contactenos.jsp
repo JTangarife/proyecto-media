@@ -27,7 +27,7 @@
         </style>
     </head>
     <body>
-       
+        
         <ul>
             <li><a href="principal">Inicio</a></li>    
             <li><a href="productos">Productos</a></li>       
@@ -39,14 +39,14 @@
         <%@page import="modelos.Contactenos" %>
         
         <%
-        List<Contactenos> listaContactenos = (List<Contactenos>) request.getAttribute("ListaDesa");
+        List<Contactenos> listaContactenos = (List<Contactenos>) request.getAttribute("Contactenos");
         %>
         <h1>Contáctenos</h1>
         
-        <form name="contactenos" action="contactenos" method="POST">
-            <span>Nombre</span><input type="text" name="nombre"/>
-            <span>Teléfono</span><input type="text" name="telefono"/>
-            <span>Dirección</span><input type="text" name="direccion"/>
+        <form name="contactenos" action="ContactoC" method="POST">
+            <span>Nombre</span><input type="text" name="nombre" id="nombre"/>
+            <span>Teléfono</span><input type="text" name="telefono" id="telefono"/>
+            <span>Dirección</span><input type="text" name="direccion" id="direccion"/>
                 
             <button type="submit" class="btn btn-danger">Guardar información</button>
         </form>

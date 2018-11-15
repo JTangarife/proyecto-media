@@ -46,7 +46,7 @@
         %>
         <h1>Ingreso de productos a la tienda</h1>
         <br>
-        <form name="productos" action="productos" method="POST">
+        <form name="productos" action="ProductosController" method="POST">
             <span>Nombre</span><input type="text" name="nombre" />
             <span>Precio</span><input type="number" name="precio" />
             <span>Descripción</span><input type="text" name="descripcion" />

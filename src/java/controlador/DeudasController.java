@@ -121,9 +121,9 @@ public class DeudasController extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("jsp/deudas.jsp");
 
         String idusuario = request.getParameter("idusuario");
-        String valor_deudas = request.getParameter("valordeuda");
+        int valoreuda = Integer.parseInt("valordeuda");
 
-        int deuda = Integer.parseInt(valor_deudas);
+        int deuda = Integer.parseInt(valordeuda);
 
         if (idstr != null && !idstr.equals("")) {
             int id = Integer.parseInt(idstr);
